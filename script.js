@@ -43,5 +43,5 @@ setTimeout(function() {
     const hello = document.createElement('span');
     hello.textContent = 'hello';
     header.insertAdjacentElement('afterend', hello);
-  }, 10000);
+  }, 4000);
   

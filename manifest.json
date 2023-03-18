@@ -1,7 +1,7 @@
 {
     "name": "US-Sponsorship Checker",
-    "version": "1.0.1",
-    "description": "latest covid data of UK",
+    "version": "1.0.2",
+    "description": "Check if job postings offer US visa Sponsorship",
     "manifest_version": 3,
     "author": "Achintya Kumar",
     "content_scripts": [
@@ -12,5 +12,8 @@
             ],
             "js": ["script.js"]
         }
-    ]
+    ],
+    "action": {
+        "default_popup": "popup.html"
+      }
 }
