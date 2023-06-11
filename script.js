@@ -39,9 +39,21 @@
   
 
 setTimeout(function() {
-    const header = document.querySelector('h2.t-black.ph1.t-bold.t-18');
+    const header = document.querySelector('span.job-card-container__primary-description');
     const hello = document.createElement('span');
-    hello.textContent = 'hello';
+    hello.textContent = 'Hiring';
+    console.log(header);
     header.insertAdjacentElement('afterend', hello);
   }, 4000);
+
+  // Loop through all job postings and insert this
   
+  // setTimeout(function() {
+  //   const spans = document.querySelectorAll('span.job-card-container__primary-description');
+  //   const spansArray = Array.from(spans);
+  //   const hello = document.createElement('span');
+  //   hello.textContent = 'Hiring';
+  //   spansArray.forEach(element => {
+  //     element.insertAdjacentElement('afterend', hello);
+  //   });
+  // }, 4000);
