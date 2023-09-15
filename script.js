@@ -36,24 +36,26 @@
 //     // Observe the target node for any changes
 //     observer.observe(document.body, { childList: true, subtree: true });
 //   });
-  
 
-setTimeout(function() {
-    const header = document.querySelector('span.job-card-container__primary-description');
-    const hello = document.createElement('span');
-    hello.textContent = 'Hiring';
-    console.log(header);
-    header.insertAdjacentElement('afterend', hello);
-  }, 4000);
 
-  // Loop through all job postings and insert this
+function addHiringPills() {
+  const headers = document.querySelectorAll('span.job-card-container__primary-description');
   
-  // setTimeout(function() {
-  //   const spans = document.querySelectorAll('span.job-card-container__primary-description');
-  //   const spansArray = Array.from(spans);
-  //   const hello = document.createElement('span');
-  //   hello.textContent = 'Hiring';
-  //   spansArray.forEach(element => {
-  //     element.insertAdjacentElement('afterend', hello);
-  //   });
-  // }, 4000);
+  headers.forEach(header => {
+      const hello = document.createElement('span');
+      hello.textContent = 'Hiring';
+      
+      // Add styles for the pill-shaped element with padding
+      hello.style.backgroundColor = 'green';
+      hello.style.color = 'white';
+      hello.style.borderRadius = '20px'; // Adjust the value to control the roundness
+      hello.style.padding = '3px 10px'; // Adjust the values as needed
+      
+      console.log(header);
+      header.insertAdjacentElement('afterend', hello);
+  });
+}
+
+setTimeout(addHiringPills, 2000);
+
+chrome.runtime.sendMessage({ action: "addHiringPills" });

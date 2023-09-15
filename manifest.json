@@ -4,13 +4,17 @@
     "description": "Check if job postings offer US visa Sponsorship",
     "manifest_version": 3,
     "author": "Achintya Kumar",
+    "background": {
+        "service_worker": "background.js"
+      },
     "content_scripts": [
         {
             "matches": [
                 "https://www.thriftbooks.com/*",
                 "https://www.linkedin.com/jobs/*"
             ],
-            "js": ["script.js"]
+            "js": ["script.js"],
+            "run_at": "document_end"
         }
     ],
     "action": {
